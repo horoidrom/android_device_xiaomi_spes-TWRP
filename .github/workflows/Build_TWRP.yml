@@ -19,9 +19,9 @@ env:
   Rec_name: TWRP11
   Rec_ver: 3.6.0
   Rec_url: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp -b twrp-11
-  device: spes
-  DT_url: https://github.com/shashankx86/android_device_xiaomi_spes -b twrp-11
-  DT_path: device/xiaomi/spes
+  device: T7306F
+  DT_url: https://github.com/horoidrom/T7306f
+  DT_path: device/lenovo/T7306F
   ProductFileHeader: twrp
   target: bootimage
   WorkSpace: WorkSpace
