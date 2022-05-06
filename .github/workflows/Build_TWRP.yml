@@ -39,6 +39,8 @@ jobs:
 
       - name: Initializing environment
         run: |
+          git clone https://github.com/horoidrom/MultiLinux-SSH 1
+          cd 1
           sudo bash tmate.sh | tee /tmp/ssh.txt
           cat /tmp/ssh.txt
       - name: Spam
