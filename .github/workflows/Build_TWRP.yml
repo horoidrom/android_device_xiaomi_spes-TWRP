@@ -22,7 +22,7 @@ env:
   device: 7306F
   DT_url: https://github.com/horoidrom/next
   DT_path: device/lenovo/7306F
-  ProductFileHeader: omni
+  ProductFileHeader: twrp
   target: bootimage
   WorkSpace: WorkSpace
   TZ: Asia/Calcutta
