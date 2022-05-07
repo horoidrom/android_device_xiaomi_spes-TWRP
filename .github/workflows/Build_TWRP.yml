@@ -20,7 +20,7 @@ env:
   Rec_ver: 3.6.0
   Rec_url: repo init -u https://github.com/SHRP/manifest.git -b v3_10.0
   device: 7306F
-  DT_url: https://github.com/horoidrom/next
+  DT_url: https://github.com/horoidrom/T7306f
   DT_path: device/lenovo/7306F
   ProductFileHeader: twrp
   target: bootimage
