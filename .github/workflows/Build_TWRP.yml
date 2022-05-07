@@ -60,7 +60,7 @@ jobs:
           mkdir ${{env.WorkSpace}}
           cd ${{env.WorkSpace}}
           echo "::group::Repo Init"
-          repo init -u ${{env.Rec_url}} --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
+          repo init -u https://github.com/SHRP/manifest.git -b v3_10.0
           echo "::endgroup::"
           echo "::group::Repo Sync"
           repo sync -j4
