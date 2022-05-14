@@ -110,8 +110,8 @@ jobs:
           export ALLOW_MISSING_DEPENDENCIES=true
           echo "::endgroup::"
           ls
-          echo "::group::Lunch ${{env.ProductFileHeader}}_${{env.device}}-user"
-          lunch ${{env.ProductFileHeader}}_${{env.device}}-user
+          echo "::group::Lunch ${{env.ProductFileHeader}}_${{env.device}}-eng"
+          lunch ${{env.ProductFileHeader}}_${{env.device}}-eng
           echo "::endgroup::"
           echo "::group::Sync"
           repo sync -j4
