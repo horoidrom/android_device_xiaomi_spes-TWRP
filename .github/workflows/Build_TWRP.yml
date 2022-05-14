@@ -63,7 +63,7 @@ jobs:
           repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
           echo "::endgroup::"
           echo "::group::Repo Sync"
-          repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
+          repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
           echo "::endgroup::"
 
       - name: Sync device tree
@@ -110,8 +110,8 @@ jobs:
           export ALLOW_MISSING_DEPENDENCIES=true
           echo "::endgroup::"
           ls
-          echo "::group::Lunch ${{env.ProductFileHeader}}_${{env.device}}-eng"
-          lunch ${{env.ProductFileHeader}}_${{env.device}}-eng
+          echo "::group::Lunch ${{env.ProductFileHeader}}_${{env.device}}-user"
+          lunch ${{env.ProductFileHeader}}_${{env.device}}-user
           echo "::endgroup::"
           echo "::group::Sync"
           repo sync -j4
