@@ -19,11 +19,11 @@ env:
   Rec_name: TWRP11
   Rec_ver: 3.6.0
   Rec_url: repo init -u https://github.com/SHRP/manifest.git -b v3_10.0
-  device: 7306F
-  DT_url: https://github.com/horoidrom/T7306f
-  DT_path: device/lenovo/7306F
+  device: a53_a53_32
+  DT_url: https://github.com/horoidrom/y5p
+  DT_path: device/huawei/a53_a53_32
   ProductFileHeader: twrp
-  target: bootimage
+  target: recoveryimage
   WorkSpace: WorkSpace
   TZ: Asia/Calcutta
   Author: ${{github.actor}}
@@ -60,7 +60,7 @@ jobs:
           mkdir ${{env.WorkSpace}}
           cd ${{env.WorkSpace}}
           echo "::group::Repo Init"
-          repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
+          repo init --depth=1 -u https://github.com/SHRP/manifest.git -b v3_10.0
           echo "::endgroup::"
           echo "::group::Repo Sync"
           repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
