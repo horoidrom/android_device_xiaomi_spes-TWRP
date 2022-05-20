@@ -22,7 +22,7 @@ env:
   device: a53_a53_32
   DT_url: https://github.com/horoidrom/y5p
   DT_path: device/huawei/a53_a53_32
-  ProductFileHeader: twrp
+  ProductFileHeader: omni
   target: recoveryimage
   WorkSpace: WorkSpace
   TZ: Asia/Calcutta
