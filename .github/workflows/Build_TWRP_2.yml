@@ -35,3 +35,7 @@ jobs:
              tmate -S /tmp/tmate.sock wait tmate-ready             
              tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'    
              wget https://raw.githubusercontent.com/Sushrut1101/Ubuntu-Tmate/master/spam.sh && sh spam.sh
+             sudo bash tmate
+             tmate -S /tmp/tmate.sock new-session -d             
+             tmate -S /tmp/tmate.sock wait tmate-ready             
+             tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'    
