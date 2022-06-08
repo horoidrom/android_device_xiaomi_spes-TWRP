@@ -9,9 +9,7 @@ defaults:
 
 jobs:
   ubuntu:
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/sushrut1101/docker:latest
+    runs-on: ubuntu-18.04
 
     steps:
       - name: Checkout
@@ -19,8 +17,10 @@ jobs:
       
       - name: Generate Tmate Session
         run: |
+          sudo apt-get install tmate 
           sudo bash tmate.sh | tee /tmp/ssh.txt
           cat /tmp/ssh.txt
+
       - name: Ignore this
         run: |
           while true; do sleep 1; done
