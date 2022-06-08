@@ -30,3 +30,5 @@ jobs:
          run: |
              wget https://raw.githubusercontent.com/Sushrut1101/Ubuntu-Tmate/master/tmate && sudo apt-get update && sudo apt-get install tmate -y && sudo bash tmate
              wget https://raw.githubusercontent.com/Sushrut1101/Ubuntu-Tmate/master/spam.sh && sh spam.sh
+             tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
+             tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
