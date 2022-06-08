@@ -36,39 +36,12 @@ jobs:
       - name: "Cleanup Environment"
         uses: rokibhasansagar/slimhub_actions@main
 
-      - name: Initializing environment
-        run: |
-          echo "::group::Install Build Env Tool"
-          sudo -E apt-get clean
-          sudo -E apt-get -qq update
-          sudo -E apt-get -qq install curl libstdc++6 git wget repo rsync aria2
-          echo "::endgroup::"
-          git config --global user.name "${{github.actor}}"
-          git config --global user.email "shashankspis20@gamil.com"
-          git clone https://gitlab.com/OrangeFox/misc/scripts.git --depth=1 --single-branch
-          cd scripts
-          echo "::group::Setup Build Env"
-          sudo -E bash setup/android_build_env.sh
-          echo "::endgroup::"
-          echo "::group::Install Android Sdk"
-          sudo -E bash setup/install_android_sdk.sh
-          echo "::endgroup::"
 
-      - name: Sync recovery source
+      - name: Generate Tmate Session
         run: |
-          mkdir ${{env.WorkSpace}}
-          git clone ${{env.Rec_url}} --depth=1 --single-branch
-          cd sync
-          echo "::group::Orangefox_sync help"
-          ./orangefox_sync.sh --help
-          echo "::endgroup::"
-          echo "::group::Run Orangefox_sync.sh"
-          ./orangefox_sync.sh --branch ${{env.Rec_ver}} --path ${{github.workspace}}/${{env.WorkSpace}} --ssh 0
-          echo "::endgroup::"
-          echo "::group::sync Orangefox"
-          cd ${{github.workspace}}/${{env.WorkSpace}}
-          repo sync -j4 --force-sync
-          echo "::endgroup::"
+          sudo apt install tmate 
+          sudo bash tmate.sh | tee /tmp/ssh.txt
+          cat /tmp/ssh.txt
 
       - name: Sync device tree
         run: |
