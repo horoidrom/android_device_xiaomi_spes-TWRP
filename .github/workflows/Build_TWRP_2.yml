@@ -3,14 +3,9 @@ name: Build TWRP recovery - Test
 on:
   workflow_dispatch:
 
-env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp
-  MANIFEST_BRANCH: twrp-11
-  DEVICE: spes
-  DT_LINK: https://github.com/shashankx86/android_device_xiaomi_spes-TWRP
-  DT_PATH: device/xiaomi/spes
-  TARGET: bootimage
-  TZ: Asia/Kolkata
+defaults:
+  run:
+    shell: bash
 
 jobs:
   build:
