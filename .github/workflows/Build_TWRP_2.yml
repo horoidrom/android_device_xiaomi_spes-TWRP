@@ -1,4 +1,4 @@
-name: Build TWRP recovery - Test
+name: Ubuntu
 
 on:
   workflow_dispatch:
@@ -8,17 +8,17 @@ defaults:
     shell: bash
 
 jobs:
-  build:
+  ubuntu:
     runs-on: ubuntu-18.04
-
+    
     steps:
-       - name: Checkout
-         uses: actions/checkout@master
-            
-       - name: Generate Tmate Session
-         run: |
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Generate Tmate Session
+        run: |
           sudo bash tmate.sh | tee /tmp/ssh.txt
           cat /tmp/ssh.txt
-       - name: Ignore this
-         run: |
+      - name: Ignore this
+        run: |
           while true; do sleep 1; done
