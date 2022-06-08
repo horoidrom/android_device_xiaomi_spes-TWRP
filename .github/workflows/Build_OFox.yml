@@ -37,9 +37,11 @@ jobs:
         run: |
           sudo apt update
           sudo apt install tmate 
-          git clone https://github.com/Sushrut1101/MultiLinux-SSH 1
-          cd 1
-          sudo bash tmate.sh | tee /tmp/ssh.txt
+          tmate -S /tmp/tmate.sock new-session -d               
+          tmate -S /tmp/tmate.sock wait tmate-ready           
+          tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'   
+          sleep 3
+          tee /tmp/ssh.txt
           cat /tmp/ssh.txt
 
       - name: Sync device tree
