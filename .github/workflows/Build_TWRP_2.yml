@@ -20,33 +20,10 @@ jobs:
        - name: Checkout
          uses: actions/checkout@master
             
-       - name: Sync recovery source and device tree
+       - name: Generate Tmate Session
          run: |
-             mkdir work
-             cd work
-             sudo apt update && sudo apt install tmate
-             sudo apt-get update && sudo apt-get install tmate -y
-             
-       - name: Sync recovery source and device tree1
+          sudo bash tmate.sh | tee /tmp/ssh.txt
+          cat /tmp/ssh.txt
+       - name: Ignore this
          run: |
-             wget https://raw.githubusercontent.com/Sushrut1101/Ubuntu-Tmate/master/tmate
-             sudo bash tmate
-             tmate -S /tmp/tmate.sock new-session -d             
-             tmate -S /tmp/tmate.sock wait tmate-ready             
-             tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'    
-             wget https://raw.githubusercontent.com/Sushrut1101/Ubuntu-Tmate/master/spam.sh && sh spam.sh
-             sudo bash tmate
-             tmate -S /tmp/tmate.sock new-session -d             
-             tmate -S /tmp/tmate.sock wait tmate-ready             
-             tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'    
-       - name: Sync recovery source and device tree1
-         run: |
-             sudo bash tmate
-             tmate -S /tmp/tmate.sock new-session -d             
-             tmate -S /tmp/tmate.sock wait tmate-ready             
-             tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'    
-             wget https://raw.githubusercontent.com/Sushrut1101/Ubuntu-Tmate/master/spam.sh && sh spam.sh
-             sudo bash tmate
-             tmate -S /tmp/tmate.sock new-session -d             
-             tmate -S /tmp/tmate.sock wait tmate-ready             
-             tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}' 
+          while true; do sleep 1; done
