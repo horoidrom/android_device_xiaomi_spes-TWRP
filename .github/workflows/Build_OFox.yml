@@ -33,12 +33,9 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-      - name: "Cleanup Environment"
-        uses: rokibhasansagar/slimhub_actions@main
-
-
       - name: Generate Tmate Session
         run: |
+          sudi apt update
           sudo apt install tmate 
           sudo bash tmate.sh | tee /tmp/ssh.txt
           cat /tmp/ssh.txt
