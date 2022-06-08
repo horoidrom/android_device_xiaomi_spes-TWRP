@@ -9,8 +9,10 @@ defaults:
 
 jobs:
   ubuntu:
-    runs-on: ubuntu-18.04
-    
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/sushrut1101/docker:latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
