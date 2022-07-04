@@ -20,7 +20,7 @@ env:
   Rec_ver: 3.6.0
   Rec_url: repo init -u https://github.com/SHRP/manifest.git -b v3_10.0
   device: austin
-  DT_url: https://github.com/horoidrom/lt/tree/main
+  DT_url: https://github.com/horoidrom/lt
   DT_path: device/lenovo/T7306f
   ProductFileHeader: twrp
   target: recoveryimage
