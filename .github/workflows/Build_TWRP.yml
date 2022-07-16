@@ -17,11 +17,11 @@ on:
         default: "false"
 env:
   Rec_name: TWRP11
-  Rec_ver: 3.6.0
+  Rec_ver: 3.6.2
   Rec_url: repo init -u https://github.com/SHRP/manifest.git -b v3_10.0
-  device: T7306f
-  DT_url: https://github.com/horoidrom/lt
-  DT_path: device/lenovo/T7306f
+  device: m01q
+  DT_url: https://github.com/horoidrom/m01q-4.1
+  DT_path: device/samsung/m01q
   ProductFileHeader: twrp
   target: recoveryimage
   WorkSpace: WorkSpace
@@ -60,7 +60,7 @@ jobs:
           mkdir ${{env.WorkSpace}}
           cd ${{env.WorkSpace}}
           echo "::group::Repo Init"
-          repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
+          repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
           echo "::endgroup::"
           echo "::group::Repo Sync"
           repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
